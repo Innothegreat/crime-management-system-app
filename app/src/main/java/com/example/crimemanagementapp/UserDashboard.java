@@ -16,6 +16,18 @@ public class UserDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void viewprofile (View view) {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(), Profile.class));
+        finish();
+    }
+
+    public void reportCrime (View view) {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(), CrimeReporting.class));
+        finish();
+    }
+
     public void logout (View view) {
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(), Login.class));

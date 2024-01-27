@@ -31,13 +31,42 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DASHBOARD"
+        android:text="USER DASHBOARD"
         android:textSize="20sp"
         android:textColor="@color/orange"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/textView"
         />
+
+    <RelativeLayout
+        android:id="@+id/line1"
+        android:layout_width="294dp"
+        android:layout_height="98dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp">
+
+        <Button
+            android:id="@+id/pb4"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/button_bg_round"
+            android:onClick="reportCrime"
+            android:padding="15dp"
+            android:text="Report a Crime" />
+
+        <Button
+            android:id="@+id/pb3"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_toEndOf="@+id/pb4"
+            android:background="@drawable/button_bg_round"
+            android:onClick="viewprofile"
+            android:padding="15dp"
+            android:text="View Profile" />
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/button"
