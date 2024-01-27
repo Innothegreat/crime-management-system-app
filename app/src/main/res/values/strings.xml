@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CrimeManagementApp</string>
+    <string name="logout">Logout</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_profile">Your Profile</string>
+    <string name="todo">TODO</string>
+    <string name="country">Country</string>
+</resources>

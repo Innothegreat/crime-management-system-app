@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981308350693",
+    "project_id": "crimemanagementapp-c2997",
+    "storage_bucket": "crimemanagementapp-c2997.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981308350693:android:18e3bc8c74a12b645b340c",
+        "android_client_info": {
+          "package_name": "com.example.crimemanagementapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9XClg2lT_ZrVCuHbAIiPILP69Jh1bUvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
