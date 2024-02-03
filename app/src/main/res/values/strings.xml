@@ -9,4 +9,9 @@
     <string name="your_profile">Your Profile</string>
     <string name="todo">TODO</string>
     <string name="country">Country</string>
+    <string name="view_profile">View Profile</string>
+    <string name="report_a_crime">Report a Crime</string>
+    <string name="welcome_to_the_app">WELCOME TO THE APP</string>
+    <string name="user_dashboard">USER DASHBOARD</string>
+    <string name="log_out">Log out</string>
 </resources>
