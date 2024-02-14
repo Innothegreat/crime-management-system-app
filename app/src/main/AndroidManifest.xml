@@ -15,15 +15,14 @@
         android:theme="@style/Theme.CrimeManagementApp"
         tools:targetApi="34">
         <activity
+            android:name=".CrimeList"
+            android:exported="false" />
+        <activity
             android:name=".PoliceDashboard"
-            android:exported="false">
-        </activity>
-
+            android:exported="false"></activity>
         <activity
             android:name=".Profile"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".CrimeReporting"
             android:exported="false" />

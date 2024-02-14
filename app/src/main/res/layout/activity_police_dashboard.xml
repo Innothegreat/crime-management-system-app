@@ -44,6 +44,33 @@
 
     </ScrollView>
 
+    <RelativeLayout
+        android:id="@+id/line1"
+        android:layout_width="294dp"
+        android:layout_height="98dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp">
+
+        <Button
+            android:id="@+id/pb6"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="40dp"
+            android:onClick="crimereports"
+            android:padding="15dp"
+            android:text="Crime Reports" />
+
+        <Button
+            android:id="@+id/pb3"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_toEndOf="@+id/pb6"
+            android:onClick="viewprofile"
+            android:padding="15dp"
+            android:text="View Profile" />
+
+    </RelativeLayout>
+
     <Button
         android:id="@+id/button"
         android:layout_width="117dp"

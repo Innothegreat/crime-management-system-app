@@ -1,10 +1,13 @@
 package com.example.crimemanagementapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +18,8 @@ public class CrimeReporting extends AppCompatActivity {
     private EditText editTextLocation;
     private EditText editTextDescription;
     private Button buttonSubmit;
+    // Firebase Database reference
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,8 @@ public class CrimeReporting extends AppCompatActivity {
         editTextLocation = findViewById(R.id.editTextLocation);
         editTextDescription = findViewById(R.id.editTextDescription);
         buttonSubmit = findViewById(R.id.buttonSubmit);
+        // Initialize Firebase Database
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("crimes");
 
         // Set onClickListener for the submit button
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
@@ -39,11 +46,33 @@ public class CrimeReporting extends AppCompatActivity {
     }
 
     private void submitCrimeReport() {
+        // Retrieve data from form fields
+        EditText crimeTypeEditText = findViewById(R.id.editTextCrimeType);
+        EditText dateTimeEditText = findViewById(R.id.editTextDateTime);
+        EditText locationEditText = findViewById(R.id.editTextLocation);
+        EditText descriptionEditText = findViewById(R.id.editTextDescription);
+
         // Get user input
-        String crimeType = editTextCrimeType.getText().toString();
-        String dateTime = editTextDateTime.getText().toString();
-        String location = editTextLocation.getText().toString();
-        String description = editTextDescription.getText().toString();
+        String crimeType = crimeTypeEditText.getText().toString();
+        String dateTime = dateTimeEditText.getText().toString();
+        String location = locationEditText.getText().toString();
+        String description = descriptionEditText.getText().toString();
+
+        // Create a Crime object
+        Crime crime = new Crime(crimeType, dateTime, location, description);
+
+        // Push crime data to Firebase Database
+        mDatabase.push().setValue(crime);
+
+        // Create intent to pass data to CrimeList
+        Intent intent = new Intent(this, CrimeList.class);
+        intent.putExtra("crimeType", crimeType);
+        intent.putExtra("dateTime", dateTime);
+        intent.putExtra("location", location);
+        intent.putExtra("description", description);
+
+        // Start CrimeListActivity
+        startActivity(intent);
 
         // Validate input
         if (crimeType.isEmpty() || dateTime.isEmpty() || location.isEmpty() || description.isEmpty()) {

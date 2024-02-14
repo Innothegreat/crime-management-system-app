@@ -68,6 +68,24 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/line2"
+        android:layout_width="294dp"
+        android:layout_height="98dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp">
+
+        <Button
+            android:id="@+id/pb6"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="40dp"
+            android:onClick="crimereport"
+            android:padding="15dp"
+            android:text="List of Crimes" />
+
+    </RelativeLayout>
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
