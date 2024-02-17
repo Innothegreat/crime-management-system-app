@@ -15,14 +15,17 @@
         android:theme="@style/Theme.CrimeManagementApp"
         tools:targetApi="34">
         <activity
+            android:name=".GoogleMap"
+            android:exported="false" />
+        <activity
             android:name=".CrimeList"
             android:exported="false" />
         <activity
             android:name=".PoliceDashboard"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Profile"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".CrimeReporting"
             android:exported="false" />
@@ -44,6 +47,10 @@
         <activity
             android:name=".UserDashboard"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/my_map_api_key" />
     </application>
 
 </manifest>

@@ -31,6 +31,11 @@ public class UserDashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void viewmap(View view) {
+        Intent intent = new Intent(UserDashboard.this, GoogleMap.class);
+        startActivity(intent);
+    }
+
     public void logout (View view) {
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(), Login.class));

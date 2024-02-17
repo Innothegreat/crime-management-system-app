@@ -14,4 +14,5 @@
     <string name="welcome_to_the_app">WELCOME TO THE APP</string>
     <string name="user_dashboard">USER DASHBOARD</string>
     <string name="log_out">Log out</string>
+    <string name="my_map_api_key">AIzaSyA2XPcKbCikqs57xN8CLe2mbeVZXP4OpdU</string>
 </resources>
