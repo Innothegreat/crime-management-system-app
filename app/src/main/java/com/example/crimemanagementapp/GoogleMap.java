@@ -8,6 +8,9 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -66,6 +69,41 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback {
         LatLng sydney = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         myMap.addMarker(new MarkerOptions().position(sydney).title("Your Location"));
         myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_map, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.mapNone) {
+            myMap.setMapType(com.google.android.gms.maps.GoogleMap.MAP_TYPE_NONE);
+        }
+
+        if (id == R.id.mapNormal) {
+            myMap.setMapType(com.google.android.gms.maps.GoogleMap.MAP_TYPE_NORMAL);
+        }
+
+        if (id == R.id.mapSatellite) {
+            myMap.setMapType(com.google.android.gms.maps.GoogleMap.MAP_TYPE_SATELLITE);
+        }
+
+        if (id == R.id.mapHybrid) {
+            myMap.setMapType(com.google.android.gms.maps.GoogleMap.MAP_TYPE_HYBRID);
+        }
+
+        if (id == R.id.mapTerrain) {
+            myMap.setMapType(com.google.android.gms.maps.GoogleMap.MAP_TYPE_TERRAIN);
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
