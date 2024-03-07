@@ -1,10 +1,10 @@
 package com.example.crimemanagementapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -21,6 +21,10 @@ public class PoliceDashboard extends AppCompatActivity {
     }
     public void viewprofile(View view) {
         Intent intent = new Intent(PoliceDashboard.this, Profile.class);
+        startActivity(intent);
+    }
+    public void viewmap(View view) {
+        Intent intent = new Intent(PoliceDashboard.this, GoogleMap.class);
         startActivity(intent);
     }
     public void logout (View view) {
