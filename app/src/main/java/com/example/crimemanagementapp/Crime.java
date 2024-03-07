@@ -7,15 +7,19 @@ public class Crime {
     private String dateTime;
     private String location;
     private String description;
+    private String name;
+    private String phonenumber;
 
     // Default constructor required for Firebase
     public Crime() {}
 
-    public Crime(String crimeType, String dateTime, String location, String description) {
+    public Crime(String crimeType, String dateTime, String location, String description, String name, String phonenumber) {
         this.crimeType = crimeType;
         this.dateTime = dateTime;
         this.location = location;
         this.description = description;
+        this.name = name;
+        this.phonenumber = phonenumber;
     }
 
     // Getters and setters
@@ -50,13 +54,29 @@ public class Crime {
     public void setDescription(String description) {
         this.description = description;
     }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
     @NonNull
     @Override
     public String toString() {
         return "Crime Type: " + crimeType + "\n"
                 + "Date and Time: " + dateTime + "\n"
                 + "Location: " + location + "\n"
-                + "Description: " + description;
+                + "Description: " + description + "\n"
+                + "Name: " + name + "\n"
+                + "Phonenumber: " + phonenumber;
     }
 }
 

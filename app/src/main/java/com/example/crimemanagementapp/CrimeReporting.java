@@ -68,7 +68,7 @@ public class CrimeReporting extends AppCompatActivity {
         String phonenumber = PhoneNumberText.getText().toString();
 
         // Create a Crime object
-        Crime crime = new Crime(crimeType, dateTime, location, description);
+        Crime crime = new Crime(crimeType, dateTime, location, description, name, phonenumber);
 
         // Push crime data to Firebase Database
         mDatabase.push().setValue(crime);
@@ -79,8 +79,8 @@ public class CrimeReporting extends AppCompatActivity {
         intent.putExtra("dateTime", dateTime);
         intent.putExtra("location", location);
         intent.putExtra("description", description);
-        intent.putExtra("Name", name);
-        intent.putExtra("Phonenumber", phonenumber);
+        intent.putExtra("name", name);
+        intent.putExtra("phonenumber", phonenumber);
 
         // Start CrimeListActivity
         startActivity(intent);

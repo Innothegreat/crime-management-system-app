@@ -33,6 +33,8 @@ public class CrimeList extends AppCompatActivity {
         String dateTime = intent.getStringExtra("dateTime");
         String location = intent.getStringExtra("location");
         String description = intent.getStringExtra("description");
+        String name = intent.getStringExtra("name");
+        String phonenumber = intent.getStringExtra("phonenumber");
 
         // Create a list to hold crime data
         crimeDataList = new ArrayList<>();
@@ -40,6 +42,8 @@ public class CrimeList extends AppCompatActivity {
         crimeDataList.add("Date and Time: " + dateTime);
         crimeDataList.add("Location: " + location);
         crimeDataList.add("Description: " + description);
+        crimeDataList.add("Name: " + name);
+        crimeDataList.add("Phone number: " + phonenumber);
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("crimes");
 
