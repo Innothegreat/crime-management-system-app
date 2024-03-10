@@ -78,5 +78,9 @@ public class Crime {
                 + "Name: " + name + "\n"
                 + "Phonenumber: " + phonenumber;
     }
+
+    public String getId() {
+        return null;
+    }
 }
 
