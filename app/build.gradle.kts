@@ -62,4 +62,5 @@ dependencies {
     implementation ("com.google.android.gms:play-services-location:21.2.0")
     implementation ("com.google.android.libraries.places:places:3.3.0")
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    implementation("com.google.maps.android:android-maps-utils:2.3.0")
 }

@@ -20,12 +20,16 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.maps.android.heatmaps.HeatmapTileProvider;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback {
@@ -36,6 +40,8 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback {
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
     public LatLng userLocation;
+    private HeatmapTileProvider mProvider;
+    private List<LatLng> mHeatmapData;
 
 
     @Override
@@ -139,6 +145,17 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback {
 
         myMap = googleMap;
 
+        // Initialize heatmap data
+        mHeatmapData = generateHeatmapData();
+
+        // Create a HeatmapTileProvider
+        mProvider = new HeatmapTileProvider.Builder()
+                .data(mHeatmapData)
+                .build();
+
+        // Add a tile overlay to the map
+        myMap.addTileOverlay(new TileOverlayOptions().tileProvider(mProvider));
+
         LatLng sydney = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         MarkerOptions options = new MarkerOptions().position(sydney).title("Your Location");
         myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
@@ -158,6 +175,26 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback {
 
     }
 
+    private List<LatLng> generateHeatmapData() {
+        List<LatLng> heatmapData = new ArrayList<>();
+        // Add your heatmap data points here
+        heatmapData.add(new LatLng(37.775, -122.419));
+        heatmapData.add(new LatLng(37.775, -122.418));
+        heatmapData.add(new LatLng(37.775, -122.417));
+        heatmapData.add(new LatLng(-0.303099,36.080027));
+        heatmapData.add(new LatLng(-1.286389, 36.817223));
+        heatmapData.add(new LatLng( -4.043477, 39.668206));
+        heatmapData.add(new LatLng(-0.091702, 34.767956));
+        heatmapData.add(new LatLng( 0.521459, 35.269788));
+        heatmapData.add(new LatLng(-3.217000, 40.116753));
+        heatmapData.add(new LatLng(-2.271573,40.902156));
+        heatmapData.add(new LatLng (-0.717305, 36.431601));
+        heatmapData.add(new LatLng(-4.280632, 39.593889));
+        heatmapData.add(new LatLng (0.046582, 37.647392));
+        // Add more data points as needed
+        return heatmapData;
+    }
+
     // Method to get URL for nearby places API request
     private String getUrl(double latitude, double longitude, String nearbyPlace) {
         StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
@@ -168,7 +205,35 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback {
         googlePlacesUrl.append("&key=").append("AIzaSyAEeJy0X-NH5eXep12V9pr695Kj1ZRY2c8");
         return googlePlacesUrl.toString();
     }
-    
+
+    public class CrimeDataFetcher {
+
+        // Hypothetical method to fetch crime hotspots for Nakuru County
+        public List<LatLng> getCrimeHotspotsForNakuruCounty() {
+            List<LatLng> crimeHotspots = new ArrayList<>();
+
+            // Hypothetical crime data for Nakuru County (latitude and longitude coordinates)
+            double[][] crimeData = {
+                    {0.3, 36.0667}, // Example hotspot 1
+                    {0.35, 36.1},   // Example hotspot 2
+                    // Add more crime hotspot coordinates as needed
+            };
+
+            // Add crime hotspot coordinates to the list
+            for (double[] coordinates : crimeData) {
+                LatLng hotspot = new LatLng(coordinates[0], coordinates[1]);
+                crimeHotspots.add(hotspot);
+                MarkerOptions markerOptions = new MarkerOptions()
+                        .position(hotspot)
+                        .title("Crime Hotspot")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)); // You can customize the marker icon
+                myMap.addMarker(markerOptions);
+            }
+
+            return crimeHotspots;
+        }
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
