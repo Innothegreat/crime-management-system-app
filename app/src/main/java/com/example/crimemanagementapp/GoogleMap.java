@@ -191,6 +191,32 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback {
         heatmapData.add(new LatLng (-0.717305, 36.431601));
         heatmapData.add(new LatLng(-4.280632, 39.593889));
         heatmapData.add(new LatLng (0.046582, 37.647392));
+        heatmapData.add(new LatLng(-1.3186, 36.9278));
+        heatmapData.add(new LatLng(-1.3115,36.8244));
+        heatmapData.add(new LatLng(-1.2552,36.8597));
+        heatmapData.add(new LatLng(-1.2987,36.7413));
+        heatmapData.add(new LatLng(-1.3901,36.7579));
+        heatmapData.add(new LatLng(-1.4477,36.9602));
+        heatmapData.add(new LatLng(-1.4678,36.9744));
+        heatmapData.add(new LatLng(-1.4047,36.6921));
+        heatmapData.add(new LatLng(-1.3968,36.6948));
+        heatmapData.add(new LatLng(-1.4657,36.9639));
+        heatmapData.add(new LatLng(-1.4624,36.9661));
+        heatmapData.add(new LatLng(-1.0354,37.0786));
+        heatmapData.add(new LatLng(-1.0412,37.0645));
+        heatmapData.add(new LatLng(-1.2563,36.6885));
+        heatmapData.add(new LatLng(-1.2589,36.6773));
+        heatmapData.add(new LatLng(-1.2448,36.6618));
+        heatmapData.add(new LatLng(-1.1668,36.8425));
+        heatmapData.add(new LatLng(-1.0975,36.6423));
+        heatmapData.add(new LatLng(-1.4569,36.9669));
+        heatmapData.add(new LatLng(-1.4602,36.9722));
+        heatmapData.add(new LatLng(-1.3932,36.9264));
+        heatmapData.add(new LatLng(-1.3928,36.9331));
+        heatmapData.add(new LatLng(-1.3877,36.9184));
+        heatmapData.add(new LatLng(-1.3782,36.9109));
+        heatmapData.add(new LatLng(-1.2321,36.9187));
+        heatmapData.add(new LatLng(-1.2287,36.9265));
         // Add more data points as needed
         return heatmapData;
     }
