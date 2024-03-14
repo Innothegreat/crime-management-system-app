@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,11 +103,12 @@ public class CrimeList extends AppCompatActivity {
 
     // Method to handle delete button click (defined in list item layout)
     public void onDeleteClicked(View view) {
-        // Handle delete button click
-        // Extract crime details from list item and delete corresponding crime from Firebase database
+// Get the crime details associated with the clicked delete button
         View parent = (View) view.getParent();
-        ListView listViewCrimes = parent.findViewById(R.id.listViewCrimes);
-        String crimeDetails = listViewCrimes.getTextFilter().toString();
+        TextView crimeDetailsTextView = parent.findViewById(R.id.listViewCrimes);
+        String crimeDetails = crimeDetailsTextView.getText().toString();
+
+        // Parse the crime details into a Crime object
         Crime crime = parseCrimeDetails(crimeDetails);
         if (crime != null) {
             // Delete crime from Firebase database

@@ -91,7 +91,7 @@
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:background="@drawable/btrround"
-        android:text="LOGIN AS POLICE"
+        android:text="LOGIN AS POLICE OFFICER"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:layout_centerHorizontal="true"
