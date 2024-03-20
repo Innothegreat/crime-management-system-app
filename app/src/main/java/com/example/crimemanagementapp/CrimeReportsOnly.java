@@ -26,7 +26,7 @@ public class CrimeReportsOnly extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crime_list);
+        setContentView(R.layout.activity_crime_reports_only);
 
         listViewCrimes = findViewById(R.id.listViewCrimes);
 

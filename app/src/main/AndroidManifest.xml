@@ -21,12 +21,6 @@
             android:name=".CrimeReportsOnly"
             android:exported="false" />
         <activity
-            android:name=".ChartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GraphActivity"
-            android:exported="false" />
-        <activity
             android:name=".GoogleMap"
             android:exported="false" />
         <activity
