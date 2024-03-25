@@ -18,6 +18,16 @@
         android:theme="@style/Theme.CrimeManagementApp"
         tools:targetApi="34">
         <activity
+            android:name=".EmergencyCalls"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="tel" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".CrimeReportsOnly"
             android:exported="false" />
         <activity

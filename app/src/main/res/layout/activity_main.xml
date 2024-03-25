@@ -96,6 +96,25 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/line3"
+        android:layout_width="294dp"
+        android:layout_height="98dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="490dp">
+
+
+        <Button
+            android:id="@+id/emergency"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="0dp"
+            android:onClick="emergencycall"
+            android:padding="15dp"
+            android:text="Emergency Call" />
+
+    </RelativeLayout>
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"

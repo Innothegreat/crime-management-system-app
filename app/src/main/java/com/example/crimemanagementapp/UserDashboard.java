@@ -36,6 +36,11 @@ public class UserDashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void emergencycall(View view) {
+        Intent intent = new Intent(UserDashboard.this, EmergencyCalls.class);
+        startActivity(intent);
+    }
+
     public void logout (View view) {
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(), Login.class));

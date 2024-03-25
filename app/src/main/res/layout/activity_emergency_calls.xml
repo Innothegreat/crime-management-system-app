@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#ffffff">
+
+    <Button
+        android:id="@+id/emergency_call_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CALL 999"
+        android:textColor="#ffffff"
+        android:background="#ff0000"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"/>
+
+</RelativeLayout>
