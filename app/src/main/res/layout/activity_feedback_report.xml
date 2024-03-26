@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:text="REPORT A CRIME"
+        android:text="FEEDBACK REPORT"
         android:textColor="@color/red"
         android:textSize="20sp"
         android:textStyle="bold"/>
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewtitle"
         android:layout_marginTop="16dp"
-        android:text="Name"
+        android:text="Victim's Name"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
@@ -32,7 +32,7 @@
         android:layout_below="@id/textViewName"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:hint="Enter your name"/>
+        android:hint="Enter the name"/>
 
     <TextView
         android:id="@+id/textViewPhoneNumber"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextName"
         android:layout_marginTop="16dp"
-        android:text="Phone Number"
+        android:text="Victim's Phone Number"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
@@ -51,7 +51,7 @@
         android:layout_below="@id/textViewPhoneNumber"
         android:layout_marginTop="8dp"
         android:inputType="phone"
-        android:hint="Enter your phone number"/>
+        android:hint="Enter the phone number"/>
 
 
     <TextView
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:text="Crime Type"
+        android:text="Feedback about the crime commited"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewCrimeType"
         android:layout_marginTop="-4dp"
-        android:hint="Enter the type of crime"
+        android:hint="Enter the feedback"
         android:inputType="text" />
 
     <TextView
@@ -93,51 +93,14 @@
         android:inputType="none"
         android:hint="Set date and time"/>
 
-    <TextView
-        android:id="@+id/textViewLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextDateTime"
-        android:layout_marginTop="16dp"
-        android:text="Location"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/editTextLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewLocation"
-        android:layout_marginTop="8dp"
-        android:inputType="text"
-        android:hint="Enter the location"/>
-
-    <TextView
-        android:id="@+id/textViewDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextLocation"
-        android:layout_marginTop="16dp"
-        android:text="Description"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/editTextDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewDescription"
-        android:layout_marginTop="8dp"
-        android:inputType="textMultiLine"
-        android:hint="Provide details about the crime"/>
 
     <Button
         android:id="@+id/buttonSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextDescription"
+        android:layout_below="@id/editTextDateTime"
         android:layout_marginTop="10dp"
-        android:text="Submit Crime Report"
+        android:text="Submit Feedback"
         android:onClick="onSubmitClicked"
         />
 </RelativeLayout>

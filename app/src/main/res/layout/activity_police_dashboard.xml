@@ -88,6 +88,15 @@
             android:padding="15dp"
             android:text="Map View" />
 
+        <Button
+            android:id="@+id/feedback"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="170dp"
+            android:onClick="reportfeedback"
+            android:padding="15dp"
+            android:text="Report Feedback" />
+
     </RelativeLayout>
 
     <Button

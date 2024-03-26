@@ -13,7 +13,7 @@ public class Crime {
     // Default constructor required for Firebase
     public Crime() {}
 
-    public Crime(String crimeType, String dateTime, String location, String description, String name, String phonenumber) {
+    public Crime(String crimeType, String dateTime, String location, String description) {
         this.crimeType = crimeType;
         this.dateTime = dateTime;
         this.location = location;

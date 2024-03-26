@@ -27,6 +27,10 @@ public class PoliceDashboard extends AppCompatActivity {
         Intent intent = new Intent(PoliceDashboard.this, GoogleMap.class);
         startActivity(intent);
     }
+    public void reportfeedback(View view) {
+        Intent intent = new Intent(PoliceDashboard.this, FeedbackReport.class);
+        startActivity(intent);
+    }
     public void logout (View view) {
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(), Login.class));
